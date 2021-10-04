@@ -96,9 +96,14 @@ export default {
   methods: {
     // eslint-disable-next-line
     handleRegister(user) {
+      AuthService.saveUser(user)
       this.message = ''
-      this.successful = false
+      this.successful = true
       this.loading = true
+      this.$router.push({
+        name: 'EventList'
+      })
+
     }
   }
 }
